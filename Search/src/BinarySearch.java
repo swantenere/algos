@@ -29,8 +29,9 @@ public class BinarySearch {
     public static int binary_search_iterative(int array[],int val)
     {
         int low=0,high=array.length,mid;
-        for(mid=(low+high)/2;low<high;)
+        for(;low<high;)
         {
+            mid=(low+high)/2;
             if(array[mid]==val)
                 return mid;
             else if (val<array[mid])
