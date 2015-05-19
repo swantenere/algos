@@ -5,6 +5,8 @@ import java.util.HashMap;
 /**
  * Created by Annam on 19-05-2015.
  */
+ 
+ //Time Complexity O(n)
 public class FindElementsHashMap {
     public static void main(String args[]) throws Exception {
 
@@ -24,7 +26,7 @@ public class FindElementsHashMap {
         print_array(array);
         int flag=0;
         for(int i=1;i<=num_elts;i++){
-            if((hm.containsKey(x-array[i]))&&(hm.get(array[i])!=1))
+            if((hm.containsKey(x-array[i]))&&(hm.get(array[i])!=1))//find if the pair exists and is not visited yet
             {
                 flag=1;
                 System.out.println("found pair that add to x :"+array[i]+","+(x-array[i]));
