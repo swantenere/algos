@@ -72,11 +72,11 @@ public class ModifiedMergeSortToFindElements {
     public static void merge_and_print(int left[],int right[],int x)
     {
         int p=1,q=1,flag=0;
-        while((p<array_end)&&(q<=array_end/2))
+        while((p<array_end)&&(q<array_end))
         {
             if(left[p]==right[q])
             {
-                if(!(left[p]==(x-left[p])))
+                if(!(left[p]==(x-left[p]))&&((x-left[p])>left[p]))
                 System.out.println("found pairs that add up to "+x+": "+left[p]+" , "+(x-left[p]));
                 p++;
                 q++;
