@@ -24,11 +24,9 @@ public class LongestNonRepeatingSubstring {
         int curr_len=1,max_len=1;
         int prev_substr_start=0;
         HashMap<Character,Integer> index_hash=new HashMap<Character,Integer>();
-        HashMap<Character,Integer> hm=new HashMap<Character,Integer>();
-        hm.put(string[0],1);
         index_hash.put(string[0],0);
         for(int i=1;i<num_of_chars;i++) {
-            if((hm.get(string[i])==null)||(hm.get(string[i])!=1)||(index_hash.get(string[i])==null)||(index_hash.get(string[i])<substr_start)) { //visiting character for first time.
+            if((index_hash.get(string[i])==null)||(index_hash.get(string[i])<substr_start)) { //visiting character for first time.
                 index_hash.put(string[i], i);
                 curr_len++;
             }
@@ -43,7 +41,7 @@ public class LongestNonRepeatingSubstring {
                 curr_len=i-substr_start+1;
                 index_hash.put(string[i],i);
             }
-            hm.put(string[i], 1);
+
         }
         if(max_len<curr_len)
         {
