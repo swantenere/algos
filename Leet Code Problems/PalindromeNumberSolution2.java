@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 /**
  * Created by Annam on 26-07-2015.
  */
-public class PalindromeNumber {
+public class PalindromeNumberSolution2 {
     public static void main(String args[])throws Exception
     {
         int num;
@@ -15,19 +15,16 @@ public class PalindromeNumber {
         System.out.println(palindrome);
     }
     public static boolean isPalindrome(int x) {
-        if(x<0)
-            return false;
-        if(x==0)
-            return true;
-        int length=(int)(Math.log10(x)+1)-1,l,r;
-        while(length>=1) {
-             r=x%10;
-             l=x/(int)(Math.pow(10,length));
-             if(l!=r)
-                return false;
-            x=x-(l* (int)(Math.pow(10,length)));
-            x=x/10; length=length-2;
-
+        int div = 1;
+        while (x / div >= 10) {
+            div *= 10;
+        }
+        while (x != 0) {
+            int l = x / div;
+            int r = x % 10;
+            if (l != r) return false;
+            x = (x % div) / 10;
+            div /= 100;
         }
         return true;
     }
