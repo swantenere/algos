@@ -21,14 +21,14 @@ public class ThreeSumSolution1 {// sort and parse the array with two pointers fo
             System.out.println("Enter a number");
             array[i]=Integer.parseInt(br.readLine());
         }
-        int array1[]={-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+
         ArrayList<ArrayList<Integer>> list=threeSum(array);
 
 
     }
     public static ArrayList<ArrayList<Integer>> threeSum(int[] nums) {
         ArrayList<ArrayList<Integer>> ret=new ArrayList<ArrayList<Integer>>();
-        HashMap<Integer,Integer> visited=new HashMap<>();
+
         if(nums.length<3)
             return ret;
         Arrays.sort(nums);
